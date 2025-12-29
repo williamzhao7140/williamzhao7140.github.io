@@ -7,11 +7,11 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
     return (
-        <aside className="w-48 md:w-56 flex-none px-5 md:px-10 py-8 flex flex-col justify-center">
-            <a href="#" className="hover:opacity-60 transition-opacity mb-12">
-                <img src="/media/wz.png" alt="William" className="h-8" />
+        <aside className="w-full md:w-56 flex-none px-5 py-6 md:px-10 md:py-8 flex flex-row md:flex-col justify-between md:justify-center items-center md:items-start border-b md:border-b-0 border-gray-100 md:border-none bg-canvas z-40 sticky top-0 md:static">
+            <a href="#" className="hover:opacity-60 transition-opacity md:mb-12">
+                <img src="/media/wz.png" alt="William" className="h-6 md:h-8" />
             </a>
-            <nav className="flex flex-col gap-6">
+            <nav className="flex flex-row md:flex-col gap-6 md:gap-6">
                 <button
                     onClick={() => onTabChange('work')}
                     className={`text-sm font-medium text-left transition-colors cursor-pointer ${activeTab === 'work' ? 'text-ink' : 'text-subtle hover:text-ink'

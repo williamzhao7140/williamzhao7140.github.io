@@ -48,7 +48,7 @@ export const ComponentLibrary: React.FC = () => {
                     {/* AI Observability */}
                     <div
                         onClick={() => setSelectedComponent('traces')}
-                        className="group cursor-pointer block w-[160px]"
+                        className="group cursor-pointer block w-full sm:w-[48%] md:w-[160px]"
                     >
                         <div className="relative w-full aspect-[3/4] bg-gray-100 overflow-hidden mb-3 flex items-center justify-center">
                             <div className="flex flex-col items-center gap-1">

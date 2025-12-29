@@ -7,20 +7,20 @@ function App() {
   const [activeTab, setActiveTab] = useState<'work' | 'component-library'>('work');
 
   return (
-    <div className="bg-canvas text-ink font-sans antialiased text-sm h-screen overflow-hidden flex flex-col justify-between selection:bg-gray-200">
+    <div className="bg-canvas text-ink font-sans antialiased text-sm min-h-screen md:h-screen md:overflow-hidden flex flex-col md:flex-row justify-between selection:bg-gray-200">
 
-      <header className="w-full px-5 py-6 md:px-10 md:py-8 flex-none flex justify-end items-center z-50">
-        <nav>
+      <header className="w-full px-5 py-6 md:px-10 md:py-8 flex-none flex justify-end items-center z-50 absolute top-0 right-0 pointer-events-none">
+        <nav className="pointer-events-auto">
           <ul className="flex gap-10 font-medium">
             <li className="text-xs md:text-sm">williamzhao474 [at] gmail [dot] com</li>
           </ul>
         </nav>
       </header>
 
-      <div className="flex flex-grow overflow-hidden">
+      <div className="flex flex-col md:flex-row flex-grow md:overflow-hidden w-full">
         <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
 
-        <main className="flex-1 px-5 md:px-10 py-10 md:pt-24 md:pb-10 flex flex-col overflow-y-auto">
+        <main className="flex-1 px-5 md:px-10 py-10 md:pt-24 md:pb-10 flex flex-col md:overflow-y-auto">
           <div className="w-full mx-auto">
             {activeTab === 'work' ? <Work /> : <ComponentLibrary />}
           </div>
